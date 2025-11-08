@@ -1,0 +1,36 @@
+# Template 1: Real-Time Data Processing Pipeline
+realtime_pipeline_template = {
+    'elements': {
+        'fire': 'stream_analytics',
+        'water': 'data_routing', 
+        'earth': 'state_management',
+        'wind': 'cluster_communication',
+        'lightning': 'parallel_processing'
+    },
+    'fusion_rules': {
+        'data_flow': 'water -> lightning -> fire -> earth',
+        'control_flow': 'wind -> earth -> fire -> water',
+        'error_handling': 'atomic_rollback_across_all'
+    },
+    'performance_targets': {
+        'throughput': '100k events/sec',
+        'latency': '<50ms p95',
+        'reliability': '99.95% uptime'
+    }
+}
+
+# Template 2: Distributed AI Training System
+ai_training_template = {
+    'elements': {
+        'fire': 'model_training',
+        'water': 'gradient_flow',
+        'earth': 'model_checkpoints',
+        'wind': 'parameter_sync',
+        'lightning': 'gpu_parallelism'
+    },
+    'fusion_rules': {
+        'training_flow': 'lightning -> fire -> water -> wind -> earth',
+        'synchronization': 'wind atomic barriers',
+        'checkpointing': 'earth atomic snapshots'
+    }
+}
