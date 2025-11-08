@@ -1,0 +1,26 @@
+class FusionSuccessMetrics:
+    """Measures the success of atomic fusion implementations"""
+    
+    KEY_INDICATORS = {
+        'atomicity_maintained': "All operations complete atomically",
+        'emergence_achieved': "System exhibits new capabilities",
+        'synergy_positive': "Combined performance > sum of parts", 
+        'resilience_enhanced': "System withstands component failures",
+        'scalability_demonstrated': "Performance scales with resources"
+    }
+    
+    @classmethod
+    def evaluate_fusion_success(cls, fused_system, requirements):
+        """
+        Comprehensive evaluation of fusion success
+        """
+        evaluation = {}
+        
+        for indicator, description in cls.KEY_INDICATORS.items():
+            evaluation[indicator] = {
+                'achieved': getattr(fused_system, f'check_{indicator}')(),
+                'metric_value': getattr(fused_system, f'measure_{indicator}')(),
+                'requirement_met': requirements.get(indicator, True)
+            }
+        
+        return evaluation
