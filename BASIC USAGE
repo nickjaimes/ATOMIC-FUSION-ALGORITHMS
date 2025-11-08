@@ -1,0 +1,24 @@
+from atomic_fusion import AtomicFusionOrchestrator
+from atomic_fusion.patterns import PerformancePatterns
+
+# Initialize fusion orchestrator
+orchestrator = AtomicFusionOrchestrator()
+
+# Create a high-performance computing system
+system_spec = {
+    'name': 'RealTimeAnalyticsEngine',
+    'requirements': {
+        'throughput': '1M ops/sec',
+        'latency': '<10ms',
+        'reliability': '99.999%'
+    }
+}
+
+# Fuse the system
+fused_system = await orchestrator.fuse_system(
+    system_spec=system_spec,
+    fusion_pattern=PerformancePatterns.HIGH_PERFORMANCE
+)
+
+print(f"System fused with synergy: {fused_system['element_synergy']}")
+print(f"Emergent capabilities: {fused_system['fusion_metrics']['emergent_properties']}")
