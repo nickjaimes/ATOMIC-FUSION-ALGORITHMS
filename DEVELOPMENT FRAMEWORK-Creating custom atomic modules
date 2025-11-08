@@ -1,0 +1,27 @@
+from atomic_fusion import AtomicModule, FusionInterface
+
+class CustomIntelligenceModule(AtomicModule):
+    """Example custom atomic module extending Fire capabilities"""
+    
+    def __init__(self):
+        super().__init__(module_type='fire_extension')
+        self.intelligence_engine = CustomAIEngine()
+    
+    @AtomicModule.atomic_operation
+    async def process_complex_pattern(self, pattern_data):
+        """Atomic operation for complex pattern analysis"""
+        # Pre-processing (atomic)
+        normalized_pattern = self._atomic_normalize(pattern_data)
+        
+        # Intelligence processing
+        analysis_result = await self.intelligence_engine.analyze(
+            normalized_pattern
+        )
+        
+        # Post-processing (atomic)
+        return self._atomic_format_result(analysis_result)
+    
+    @FusionInterface.export_capability
+    def fuse_with_water_module(self, water_module):
+        """Define how this module fuses with Water modules"""
+        return WaterFireFusionBridge(self, water_module)
