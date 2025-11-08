@@ -1,0 +1,22 @@
+# Create a cross-domain intelligent system
+cross_domain_system = await orchestrator.fuse_cross_domain({
+    'domains': ['computer_vision', 'natural_language', 'robotic_control'],
+    'fusion_strategy': 'hierarchical_fusion',
+    'atomic_guarantees': {
+        'data_consistency': True,
+        'temporal_synchronization': True,
+        'failure_isolation': True
+    }
+})
+
+# Access fused capabilities
+vision_language_fusion = cross_domain_system.get_fusion_interface(
+    'computer_vision', 
+    'natural_language'
+)
+
+# Use emergent capability: image description with contextual understanding
+description = await vision_language_fusion.describe_image_with_context(
+    image_data, 
+    situational_context
+)
