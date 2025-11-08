@@ -1,0 +1,7 @@
+# Install Atomic Fusion Framework
+pip install atomic-fusion
+
+# Or install from source
+git clone https://github.com/nicolas-santiago/atomic-fusion-algorithms.git
+cd atomic-fusion-algorithms
+pip install -e .
