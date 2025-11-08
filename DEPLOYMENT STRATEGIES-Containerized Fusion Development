@@ -1,0 +1,30 @@
+# docker-compose.fusion.yml
+version: '3.8'
+
+services:
+  fusion-orchestrator:
+    image: atomic-fusion/orchestrator:2.0.0
+    environment:
+      - FUSION_STRATEGY=adaptive_optimization
+      - ATOMIC_GUARANTEES=enforced
+    deploy:
+      resources:
+        limits:
+          cpus: '4'
+          memory: 8G
+
+  fire-module:
+    image: atomic-fusion/fire:2.0.0
+    environment:
+      - AI_MODELS=resnet50,bert-large,transformer-xl
+      - PROCESSING_MODE=high_precision
+    deploy:
+      replicas: 2
+
+  water-module:
+    image: atomic-fusion/water:2.0.0  
+    environment:
+      - STREAM_BUFFER=1GB
+      - ROUTING_ALGORITHM=adaptive_qos
+
+  # ... other element modules
