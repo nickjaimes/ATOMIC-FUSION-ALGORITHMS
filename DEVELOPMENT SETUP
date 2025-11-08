@@ -1,0 +1,12 @@
+# Clone and setup development environment
+git clone https://github.com/nicolas-santiago/atomic-fusion-algorithms.git
+cd atomic-fusion-algorithms
+
+# Install development dependencies
+pip install -e ".[dev]"
+
+# Run test suite
+pytest tests/ -v
+
+# Validate fusion patterns
+python scripts/validate_fusions.py
